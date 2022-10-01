@@ -1,0 +1,48 @@
+h4 {
+    font-weight: bolder;
+}
+
+h5 {
+    font-weight: bold;
+    color: #0000007e;
+}
+
+hr{
+    margin: 0%;
+    height: 15px;
+    background-color: rgb(242, 243, 243);   
+}
+
+.inbox{
+    width: 650px;
+    background-color: rgb(242, 243, 243);
+}
+
+.checkboxes label{
+    margin: 0px 15px 0px 15px;
+  }
+
+.section-1{
+    padding: 30px auto 5px auto;
+}
+
+.section-2{
+    padding: 15px;
+}
+
+.section-3{
+    padding: 15px;
+}
+
+.table-head {
+    color: #00000070;
+}
+
+.table-body{
+    font-weight: 300;
+}
+
+#arrow{
+    color: black;
+    padding: 10px;
+}

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>IoT Ready</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+    <!-- Custom styles for this template -->
+    <link rel="stylesheet" type="text/css" href="static/css/iot.css">
+</head>
+<body>
+
+    <section class="section-1 container-fluid">
+        <form>
+            <div class="form-group">
+                <div class="row ">
+                    <div class="col-6">
+                        <label for="hub">Hub<span style="color:red">*</span><br>
+                        <input type="text" id="hub" placeholder="" class="inbox form-control" value={{ datas.hub }}>
+                        </label>
+                    </div>
+
+                    <div class="col-6 ">
+                        <label for="grn">GRN <br>
+                        <input type="text" id="grn" placeholder="" class="inbox form-control" value={{ datas.grn }}>
+                        </label>
+                    </div>
+                </div>       
+                    <div>
+                    <label for="supplier">Supplier<span style="color:red">*</span><br>
+                    <input type="text" id="supplier" placeholder="" class="inbox form-control" value={{ datas.supplier }} >
+                    </label><br>
+                
+                    <label for="sup-name">Supplier Name <br>
+                    <input type="text" id="sup-name" placeholder="" class="inbox form-control" value={{ datas.supplier_name }}>
+                    </label>
+                    </div>
+            </div>           
+        </form>
+        
+    </section>
+    <hr>
+
+
+    <section class="section-2 container-fluid">
+        <h4>SKU Summary</h4>
+        <h5>SKU Table</h5>
+        <table class="table table-bordered table-hover">
+            <thead class="table-head">
+                <tr>
+                    <th scope="col" class="checkboxes"><input type="checkbox" onClick="toggle(this)"><label>No.</label></th>
+                    <th scope="col">SKU</th>
+                    <th scope="col">Sku Description</th>
+                    <th scope="col">Standard Crate Quantity</th>
+                    <th scope="col">Procuared Quantity</th>
+                </tr>
+            </thead>
+            <tbody class="table-body">
+                {% for sku in skus %}
+                <tr>
+                    <td class="checkboxes"><input type="checkbox" name="check"><label>{{ sku.idx }}</label></td>
+                    <td>{{ sku.sku }}</td>
+                    <td>{{ sku.sku_description }}</td>
+                    <td>{{ sku.standard_crate_quantity }}</td>
+                    <td> {{ sku.quantity }} </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </section>
+    <hr>
+
+
+    <section class="section-3 container-fluid">
+        <h4>Crate List<a data-toggle="collapse" href="#collapse1" id="arrow"><span class="active" >︿</span></a></h4>
+        <div id="collapse1" class="panel-collapse collapse-show">
+        <h5 >Crate Table</h5>
+        <table class="table table-bordered table-hover">
+            <thead class="table-head">
+                <tr>
+                    <th scope="col" class="checkboxes"><input type="checkbox" onClick="toggle(this)"><label>No.</label></th>
+                    <th scope="col">Crate</th>
+                    <th scope="col">SKU</th>
+                    <th scope="col">Packed Quantity</th>
+                    <th scope="col">Crate Weight</th>
+                    <th scope="col">Is Final Crate</th>
+                </tr>
+            </thead>
+            <tbody class="table-body">
+                {% for crate in crates %}
+                <tr>
+                    <td class="checkboxes"><input type="checkbox" name="checks"><label> {{ crate.idx }} </label></td>
+                    <td>{{ crate.crate}}</td>
+                    <td>{{ crate.sku }}</td>
+                    <td>{{ crate.packed_quantity }}</td>
+                    <td>{{ crate.crate_weight }}</td>
+                    <td>{{ crate.is_final_crate }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    </section>
+</body>
+</html>
