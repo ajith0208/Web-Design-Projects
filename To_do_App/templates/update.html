@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block body %}
+<div class="col-md-4 card" style="margin:30px auto; text-align: center;">
+    <div class="card-header">
+        <div class="card-title">
+            <h1>Update Task</h1>
+        </div>
+        <div class="card-body" style="display: inline-block; margin: auto;">
+            <form action="" method="POST" style=" text-align: right;">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button class="btn btn-success" type="submit">Update</button>
+                <a class="btn btn-info" href="{% url 'todoapp:cbvhome'%}" >Cancel</a>
+            </form>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
