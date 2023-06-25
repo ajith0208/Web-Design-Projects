@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Anagram Pairs</title>
+</head>
+<body>
+  <h1 style="text-align: center; color: rgb(11, 110, 139);">Anagram Pairs</h1>
+  <h3 style="text-align: center;">Entered words are : {{ words }}</h3>
+  <h3 style="text-align: center; color: rgb(139, 11, 11);">The Anagram Pairs are : </h3>
+  <div style="display: flex; justify-content: center;">
+    <div>
+  {% for pair in pairs %}
+    <li style="margin-top: 20px;">{{ pair }}</li>
+  {% endfor %}
+  <form action="{{ url_for('home') }}">
+    <button type="submit" style="margin: 20px;">Check More</button>
+  </form>
+    </div>
+  </div>
+
+</body>
+</html>

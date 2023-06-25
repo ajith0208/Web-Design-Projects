@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anagram Finder</title>
+</head>
+<body>
+    <h1 style="text-align: center; color: rgb(11, 110, 139);">Anagram Finder</h1>
+    <form action="{{ url_for('anagram') }}" method="post" style="text-align: center;">
+        <label for="">Enter the words as space seperated : </label>
+        <input type="text" required name="values" size="100"><br>
+        <button type="submit" style="margin-top: 20px;">Find Anagram Pairs</button>
+    </form>
+</body>
+</html>
