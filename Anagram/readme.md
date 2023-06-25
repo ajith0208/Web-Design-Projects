@@ -2,8 +2,8 @@
 
 <h2>Images</h2>
 <p align="center">
-    <img src="images/1.jpeg" width="350" title="hover text">
-    <img src="images/2.jpeg" width="350" title="hover text">
+    <img src="images/1.jpeg" width="350" title="hover text"><br>
+    <img src="images/2.jpeg" width="350" title="hover text"><br>
     <img src="images/3.jpeg" width="350" title="hover text">
 </p>
 
